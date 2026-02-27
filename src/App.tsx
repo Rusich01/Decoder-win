@@ -11,16 +11,11 @@ import VariableIdPages from "./pages/variableId-pages";
 const router = createBrowserRouter([
   {
     path: "/",
-
     element: <Layout />,
-
     children: [
       { index: true, element: <Navigate to="/decoder" replace /> },
-
       { path: "decoder", element: <DecoderPages /> },
-
       { path: "variables", element: <VariablesPages /> },
-
       { path: "variable/:id", element: <VariableIdPages /> },
     ],
   },
