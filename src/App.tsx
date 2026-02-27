@@ -1,10 +1,14 @@
-import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import VariablesPages from "./pages/variables-pages";
 import DecoderPages from "./pages/decoder-pages";
 import Layout from "./components/layout";
 import VariableIdPages from "./pages/variableId-pages";
 
-let router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
 
