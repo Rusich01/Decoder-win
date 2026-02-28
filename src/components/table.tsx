@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ROUTES } from "../router/routes";
 
 type VinItem = {
   VariableId: number;
@@ -30,7 +31,7 @@ const Table = ({ result }: TableProps) => {
               <td className="px-6 py-4 font-medium">
                 <Link
                   className="flex hover:underline"
-                  to={`/variable/${item.VariableId}`}
+                  to={`${ROUTES.VARIABLE_ID}/${item.VariableId}`}
                 >
                   {item.Variable}
                 </Link>
@@ -39,7 +40,7 @@ const Table = ({ result }: TableProps) => {
               <td className="px-6 py-4">
                 <Link
                   className="hover:underline"
-                  to={`/variable/${item.VariableId}`}
+                  to={`${ROUTES.VARIABLE_ID}/${item.VariableId}`}
                 >
                   {item.Value}
                 </Link>

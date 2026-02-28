@@ -1,7 +1,7 @@
 import Table from "../components/table";
 import { useVinStore } from "../store/useVinStore";
 
-const VariablesPages = () => {
+const VariablesPag = () => {
   const { results } = useVinStore();
 
   return (
@@ -13,4 +13,4 @@ const VariablesPages = () => {
   );
 };
 
-export default VariablesPages;
+export default VariablesPag;

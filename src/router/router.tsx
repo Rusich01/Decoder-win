@@ -1,19 +1,20 @@
 import { createHashRouter, Navigate } from "react-router-dom";
-import VariablesPages from "../pages/variables-pages";
-import DecoderPages from "../pages/decoder-pages";
+import VariablesPages from "../pages/variables-page";
+import DecoderPages from "../pages/decoder-page";
 import Layout from "../components/layout";
-import VariableIdPages from "../pages/variableId-pages";
+import VariableIdPages from "../pages/variableId-page";
+import { ROUTES } from "./routes";
 
 const router = createHashRouter([
   {
-    path: "/",
+    path: ROUTES.LAYOUT,
     element: <Layout />,
     errorElement: <div>404 | Page not found</div>,
     children: [
       { index: true, element: <Navigate to="decoder" replace /> },
-      { path: "decoder", element: <DecoderPages /> },
-      { path: "variables", element: <VariablesPages /> },
-      { path: "variable/:id", element: <VariableIdPages /> },
+      { path: ROUTES.DECODER, element: <DecoderPages /> },
+      { path: ROUTES.VARIABLES, element: <VariablesPages /> },
+      { path: `${ROUTES.VARIABLE_ID}/:id`, element: <VariableIdPages /> },
     ],
   },
 ]);

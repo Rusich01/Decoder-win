@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, type SubmitEventHandler } from "react";
 import { useVinStore } from "../store/useVinStore";
+
+type SubmitForm = SubmitEventHandler<HTMLFormElement>;
 
 const Form = () => {
   const [vin, setVin] = useState("");
   const { decodeVin, loading } = useVinStore();
 
-  const submitForm = (event: any) => {
+  const submitForm: SubmitForm = (event) => {
     event.preventDefault();
 
     if (!vin) return;
@@ -35,7 +37,7 @@ const Form = () => {
          "
       >
         {loading ? (
-          <p className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></p>
+          <span className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin inline-block" />
         ) : (
           "Decode"
         )}

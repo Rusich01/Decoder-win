@@ -8,7 +8,6 @@ interface VinResult {
   Value: string;
   VariableId: number;
 }
-
 interface VinState {
   // Variables:
   results: VinResult[];
@@ -39,7 +38,7 @@ export const useVinStore = create<VinState>()(
           if (!response.ok) throw new Error("Failed to decode VIN");
           const data = await response.json();
           const filterData = data.Results.filter(
-            (item: any) => item.Value && item.Variable !== "",
+            (item: VinResult) => item.Value && item.Variable !== "",
           );
 
           set((state) => ({
